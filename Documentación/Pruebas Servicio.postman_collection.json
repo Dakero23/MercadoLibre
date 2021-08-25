@@ -1,0 +1,458 @@
+{
+	"info": {
+		"_postman_id": "be2009b9-55ae-4157-ba00-3d565caba457",
+		"name": "Pruebas Cupon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Servicio Cupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"item_ids\": [\"MCO503785357\",\"MCO583857237\"],\r\n\"amount\": 200000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+					"protocol": "https",
+					"host": [
+						"my-project-1543950798665",
+						"ey",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"v1",
+						"api",
+						"coupon"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "500 No items send",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"item_ids\": [],\r\n\"amount\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+							"protocol": "https",
+							"host": [
+								"my-project-1543950798665",
+								"ey",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"coupon"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Aug 2021 02:54:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fecha\": \"2021-08-24T21:54:40.5099482\",\n    \"mensaje\": \"No value present\",\n    \"detalles\": \"uri=/coupon\"\n}"
+				},
+				{
+					"name": "404 Cupon inferior",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"item_ids\": [\"MCO583857237\"],\r\n\"amount\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+							"protocol": "https",
+							"host": [
+								"my-project-1543950798665",
+								"ey",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"coupon"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Aug 2021 17:43:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fecha\": \"2021-08-22T12:43:54.2607209\",\n    \"mensaje\": \"El monto minimo de los items no es suficiente para poder utilizar el cupon\",\n    \"detalles\": \"uri=/coupon\"\n}"
+				},
+				{
+					"name": "404 Items No Exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"item_ids\": [\"MCO5838572387\"],\r\n\"amount\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+							"protocol": "https",
+							"host": [
+								"my-project-1543950798665",
+								"ey",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"coupon"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive, keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Aug 2021 02:53:01 GMT"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "12b6761c-eee4-4a81-ab34-98abde74b18b"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "PUT, GET, POST, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "86400"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 396373d315a846aa1ee4f069639bf7ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOG50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "UZjwfS9DZoVyTKwKqancQid6udDFPrG21IsPoKbqydi8penSqp91Cg=="
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Item with id MCO5838572387 not found\",\n    \"error\": \"not_found\",\n    \"status\": 404,\n    \"cause\": []\n}"
+				},
+				{
+					"name": "400 Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+							"protocol": "https",
+							"host": [
+								"my-project-1543950798665",
+								"ey",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"coupon"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 Aug 2021 17:42:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+							"protocol": "https",
+							"host": [
+								"my-project-1543950798665",
+								"ey",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"coupon"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Aug 2021 02:49:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item_ids\": [\n        \"MLA2\",\n        \"MLA3\"\n    ],\n    \"amount\": 470\n}"
+				},
+				{
+					"name": "200 Items WS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"item_ids\": [\"MCO583857237\",\"MCO503785357\"],\r\n\"amount\": 200000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my-project-1543950798665.ey.r.appspot.com/v1/api/coupon",
+							"protocol": "https",
+							"host": [
+								"my-project-1543950798665",
+								"ey",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"coupon"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Aug 2021 02:51:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item_ids\": [\n        \"MCO583857237\"\n    ],\n    \"amount\": 151900\n}"
+				}
+			]
+		}
+	]
+}
